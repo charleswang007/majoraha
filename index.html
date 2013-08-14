@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- adapted from http://eikes.github.com/facetedsearch/ -->
+  <head>
+    <title>Faceted Major Search</title>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link href="js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/tooltip.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/facetedsearch.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/fancybox/jquery.fancybox-1.3.4.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+		$(document).ready(function() {
+			$('.iframe').fancybox({
+				width : '85%',
+				height : '85%',
+				titlePosition: 'outside'
+			});
+		}); // end ready
+	</script>
+    <script type="text/javascript">
+	 function print(){
+		var str = "";
+		var majors = document.getElementById("majorList").getElementsByTagName("li");
+		for (var i=0;i<majors.length;i++)
+		{ 
+			var text = majors.item(i).getElementsByTagName("a").item(0).getAttribute("title").replace("_"," ").replace("_"," ").replace("_"," ") + ", ";
+			console.log(text);
+			str = str.concat(text);
+		}
+		var str_final = str.substring(0, str.length - 2).concat("\n\nCongratulations on finding your majors on MajorAha.com!");
+		alert("Your selected majors are: " + str_final);
+	 }
+ </script>
+  </head>
+  <body>
+    
+    <!-- html boilerplate -->
+    <div id="container">
+        <h2 id="title">Major Browser</h2>
+        <div id="facets"></div>
+        <div id="results"></div>
+    </div>
+    
+
+    <!--data.js holds the information about instances. You will add your data here -->
+    <script src="js/data.js"></script>
+    
+    <script>
+	  $(function() {
+		$( "#dialog" ).dialog({
+			show: {effect: 'fade', duration: 2000},
+			draggable: false,
+			resizable: false,
+			modal: true,
+			buttons: {
+				Ok: function() {
+				  $( this ).dialog( "close" );
+				}
+			  }
+		});
+	  });
+	  </script>
+    
+    <script>
+        var itemsTemplate = 
+            '<div></div><button>Show More</button>';
+        
+        var itemTemplate = 
+            '<a href="http://www.nba.com" target="_blank"> <img width="100%" src="<%= obj.imageURL %>"></a>' + 
+            '<h5 class="itemtitle"><span class="trigger" data-tooltip="#tip1" id=<%= obj.titleshort %>><%= obj.title %></span></h5>' + 
+            '<ul class="tags">' + 
+                '<% if (obj.facet1) {  %><li><%= obj.facet1 %></li><% } %>' +
+                '<% if (obj.facet2) {  %><li>ASS: <%= obj.facet2 %> (<%= obj.ASS %>)</li><% } %>' +
+                '<% if (obj.facet3) {  %><li>AMS: <%= obj.facet3 %> (<%= obj.AMS %>)</li><% } %>' +
+                '<% if (obj.facet4) {  %><li>GIP: <%= obj.facet4 %> (<%= obj.GIP %>)</li><% } %>' +
+            '</ul>' + 
+			'<p></p>' +
+            //'<p class="desc"><%= obj.description %>' + 
+			'<div class="select" id=<%= obj.titleshort %>></div></p>'
+        var facetTemplate = 
+            '<h4 class=facettitle><%= title %></h4>';
+        var facetItemTemplate = 
+            '<span class=facetitemname><%= name %></span> ' + '<span class=facetitemcount>(<%= count %>)</span>';
+            
+        
+        //part 1. update the names of these example facets to match the name of your own facet
+        //part 2. add 2 more facets to organize your animals
+        var settings = { 
+          items             : instances, 
+          
+          //These are the facet titles that get shown in the user interface. You will ultimatley add facet4  
+          //and facet5 and rename the facets to match the facets you chose to organize your instances
+          facets            : { 
+                                'facet1'  : 'Category',
+                                'facet2'  : 'Average Starting Salary (ASS)',
+                                'facet3'  : 'Average Mid-Career Salary (AMS)',
+                                'facet4'  : 'Growth In Pay (GIP)'
+                                //'facet5 : 'Another Facet'
+                              },  
+          resultSelector    : 'results',
+          facetSelector     : 'facets',
+          itemTemplate      : itemTemplate,
+          itemsTemplate     : itemsTemplate,
+          facetTemplate     : facetTemplate,
+          facetItemTemplate : facetItemTemplate,
+          paginationCount   : 100,
+          orderByOptions    : {'firstname': 'First name', 'lastname': 'Last name', 'category': 'Category', 'RANDOM': 'Random'}
+        }
+        
+        
+        var fs = new FacetedSearch(settings);
+        var itemsView = new ItemsView({
+          itemsTemplate: settings.itemsTemplate,
+          itemTemplate: settings.itemTemplate,
+          el: document.getElementById(settings.resultSelector),
+          collection: fs.get("items")
+        });
+        itemsView.render();
+        var facetsView = new FacetsView({
+          facetTemplate: settings.facetTemplate,
+          facetItemTemplate: settings.facetItemTemplate,
+          el: document.getElementById(settings.facetSelector),
+          facets: fs.get("facets")
+        });
+        facetsView.render();
+    </script>
+    <div id="dialog" class="foo" title="Info-153 Final Proejct">
+      <p>Welcome to MajorAha.com!!</p>
+    </div>
+    
+    <div class="tooltip" id="tip1">
+       <h2>A Tooltip</h2>
+       <p id="tooltip_text">some basic info</p>
+    </div>
+    
+  <div id="results2">
+    	<p>Your selected majors:
+    	<form name="form1" method="post" action="" onSubmit="JavaScript:print()">
+			<div class="results2-1" id="majorList">
+    	  <input type="submit" name="answer" id="answer" value="Export">
+  	  </form>
+    	</p>
+    
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+title
+Accounting
+Actuarial Mathematics
+Advertising
+Aerospace Engineering
+Agriculture
+American Studies
+Animal Science
+Anthropology
+Applied Mathematics
+Architecture
+Art History
+Art
+Athletic Training
+Biblical Studies
+Biochemistry (BCH)
+Biology
+Biomedical Engineering (BME)
+Biotechnology
+Broadcasting
+Business
+Chemical Engineering
+Chemistry
+Child and Family Studies
+Civil Engineering (CE)
+Civil Engineering Technology (CET)
+Classics
+Communications
+Computer Engineering (CE)
+Computer Information Systems (CIS)
+Computer Science (CS)
+Construction Management
+Criminal Justice
+Culinary Arts
+Dietetics
+Drama
+Economics
+Education
+Electrical Engineering (EE)
+Electrical Engineering Technology (EET)
+Elementary Education
+English
+Environmental Engineering
+Environmental Science
+Exercise Science
+Fashion Merchandising
+Fashion Design
+Film Production
+Finance
+Fine Arts
+Food Science
+Forestry
+French
+Geography
+Geology
+German
+Global & International Studies
+Government
+Graphic Design
+Health Sciences
+Health Care Administration
+History
+Horticulture
+Hospitality & Tourism
+Hotel Management
+Human Resources (HR)
+Human Development
+Humanities
+Industrial Engineering (IE)
+Industrial Design (ID)
+Industrial Technology (IT)
+Information Systems (IS)
+Information Technology (IT)
+Interdisciplinary Studies (IS)
+Interior Design
+International Business
+International Relations
+Journalism
+Kinesiology
+Landscape Architecture
+Liberal Arts
+Linguistics
+Literature
+Management Information Systems (MIS)
+Marketing & Communications
+Marketing Management
+Materials Science & Engineering
+Mathematics
+Mechanical Engineering (ME)
+Mechanical Engineering Technology (MET)
+Medical Technology
+Microbiology
+Molecular Biology
+Multimedia and Web Design
+Music
+Nuclear Engineering
+Nursing
+Nutrition
+Occupational Health and Safety
+Organizational Management (OM)
+Paralegal/Law
+Petroleum Engineering
+Philosophy
+Photography
+Physical Education
+Physics
+Political Science (PolySci)
+Psychology
+Public Administration
+Public Health (PH)
+Public Relations (PR)
+Radio & Television
+Recreation & Leisure Studies
+Religious Studies
+Social Science
+Social Work (SW)
+Sociology
+Software Engineering
+Spanish
+Special Education
+Speech Communication
+Sports Management
+Sports Medicine
+Statistics
+Supply Chain Management
+Telecommunications
+Theater
+Theology
+Urban Planning
+Visual Communication
+Zoology

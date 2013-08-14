@@ -1,0 +1,124 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LinkedIn JavaScript API Sample Application</title>
+<link type="text/css" rel="stylesheet" href="css/site.css">
+<!-- Load in the JavaScript framework and register a callback function when it's loaded -->
+<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+	api_key: w8ygfeocjd7u
+	onLoad: onLinkedInLoad
+	authorize: false
+</script>
+ 
+<script type="text/javascript">
+function set(){
+	console.log(document.getElementById("keywords").value);
+	if (document.getElementById("keywords").value == "Major Keyword") {document.getElementById("keywords").value = "";}
+}
+	 
+function onLinkedInLoad() {
+     // Listen for an auth event to occur
+     IN.Event.on(IN, "auth", onLinkedInAuth);
+}
+ 
+function onLinkedInAuth() {
+	 // Display my profile
+	 IN.API.Profile("me")
+	.fields("firstName", "lastName", "industry", "headline", "pictureUrl", "educations", "courses", "location:(name)", "public-profile-url", "relation-to-viewer:(distance)")
+	.result(displayProfiles)
+	.error(displayProfilesErrors);
+     // After they've signed-in, print a form to enable keyword searching
+     var div = document.getElementById("peopleSearchForm");
+	 
+ 
+     //div.innerHTML = '<h2>Find People on LinkedIn</h2>';
+     div.innerHTML += '<form action="javascript:PeopleSearch();">' +
+					  '<input id="keywords" size="30" type="text" value="Major Keyword" onclick="set()" />' +
+                      '<input type="submit" value="Search!" /></form>';
+}
+ 
+function PeopleSearch(keywords) {
+     // Call the PeopleSearch API with the viewer's keywords
+     // Ask for 4 fields to be returned: first name, last name, distance, and Profile URL
+     // Limit results to 10 and sort by distance
+     // On success, call displayPeopleSearch(); On failure, do nothing.
+     var keywords = document.getElementById('keywords').value; 
+	 console.log("keywords:");
+	 console.log(keywords);
+     IN.API.PeopleSearch()
+         .fields("firstName", "lastName", "distance", "siteStandardProfileRequest", "industry", "educations", "location:(name)", "public-profile-url", "relation-to-viewer:(distance)", "id", "headline")
+         .params({"keywords": keywords, "count": 10, "sort": "distance"})
+         .result(displayPeopleSearch)
+         .error(function error(e) { /* do nothing */ }
+     );
+}
+ 
+function displayPeopleSearch(peopleSearch) {
+     var div = document.getElementById("peopleSearchResults");
+ 
+     div.innerHTML = "<ul>";
+ 
+     // Loop through the people returned
+     var members = peopleSearch.people.values;
+     for (var member in members) {
+ 		 console.log("results:")
+		 console.log(members[member])
+         // Look through result to make name and url.
+         var nameText = members[member].firstName + " " + members[member].lastName;
+         var url = members[member].publicProfileUrl;
+ 
+         // Turn the number into English
+         var distance = members[member].distance;
+         var distanceText = members[member].distance.toString() + ' ' + "degree(s) away";
+		 var idText = ", ID: " + members[member].id;
+		 var industryText = ", Industry: " + "<span class=\"field\">" + members[member].industry + "</span>";
+		 var headline = ", Current Position: " + "<span class=\"field\">" + members[member].headline + "</span>";
+		 var location = ", Location: " + "<span class=\"field\">" + members[member].location.name + "</span>";
+		 /*
+         switch (distance) {
+         case 0:  // The viewer
+             distanceText = "you!"
+             break;
+         case 1: // Within three degrees
+         case 2: // Falling through
+         case 3: // Keep falling!
+             distanceText = "a connection " + distance + " degrees away.";
+             break;
+         case 100: // Share a group, but nothing else
+             distanceText = "a fellow group member.";
+             break;
+         case -1: // Out of netowrk
+         default: // Hope we never get this!
+             distanceText = "far, far, away.";
+         }
+		 */
+ 
+         div.innerHTML += "<li><a class=\"name\" target=\"blank\" href=\"" + url + "\">" + nameText + 
+         "</a> is <span class=\"description\">" + distanceText + industryText + headline + location + "</span></li>"
+     }
+ 
+     div.innerHTML += "</ul>";
+}
+function displayProfiles(profiles) {
+	console.log(profiles.values);
+    var profilesDiv = document.getElementById("profiles");
+ 	var members = profiles.values;
+  	for (var member in members) {
+		profilesDiv.innerHTML = "<h2>Find People on LinkedIn   " + "<img src=" + members[member].pictureUrl + " alt=\"profile pics\">" + "</h2>";
+		profilesDiv.innerHTML += 
+		  "<p id=\"" + member.id + "\">Hello " +  members[member].firstName + " " + members[member].lastName + " " +  ", please use our service to find your connections with the major of your interest" +"</p>";
+	  }
+}
+function displayProfilesErrors(error) {
+  	profilesDiv = document.getElementById("profiles");
+	profilesDiv.innerHTML = "<p>Oops!</p>";
+	console.log(error);
+	}
+</script>
+</head>
+<body>
+<script type="IN/Login"></script>
+<div id="profiles"></div>
+<div id="peopleSearchForm"></div>
+<div id="peopleSearchResults"></div>
+</body>
+</html>

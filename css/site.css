@@ -1,0 +1,25 @@
+html {
+	background-color:#FCC;
+}
+.name {
+	text-decoration:none;
+	color:#369;
+}
+.name:hover {
+	background-color:#9F6;
+}
+li {
+	color:#900;
+	font-family:"Arial Black", Gadget, sans-serif;
+	font-size:smaller;
+	list-style:square;
+}
+.description {
+	color:#000;
+	font-family:Verdana, Geneva, sans-serif;
+}
+.field {
+	font-weight:bold;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
