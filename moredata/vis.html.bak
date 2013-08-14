@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>INFO-VIS</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery.jqplot.js"></script>
+		<script type="text/javascript" src="jqplot.pieRenderer.js"></script>
+		<script type="text/javascript" src="jqplot.pointLabels.js"></script>
+	</head>
+	<body>
+		<div class="progresspie">
+			<div id="chart2"></div>
+			<div id="piename">WRONG vs. CORRECT</div>
+		</div>
+	</body>
+</html>

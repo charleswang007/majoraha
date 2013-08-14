@@ -51,10 +51,10 @@ $(document).ready(function(e) {
 				console.log("first slice: " + this.id.slice(0,x));
 				console.log("second slice: " + this.id.slice(x,this.id.length));
 				if (occurance >= 2 ) {
-					$( ".ui-sortable" ).append( "<li class=\"selection sortable\" id="+ this.id + "-text" + "><a href=\"search.html\" class=\"iframe\" title=\"" + this.id + "\">" + this.id.slice(0,x) + "</br>" + this.id.slice(x,this.id.length-1) + " " + "</a>" + "<a onClick=\"clickEvent($(this));\" id=\"remove\">x</a>" + "</li>" );
+					$( ".ui-sortable" ).append( "<li class=\"selection sortable\" id="+ this.id + "-text" + "><a href=\"search.html\" class=\"iframe\" title=\"" + this.id.slice(0,-1) + "\">" + this.id.slice(0,x) + "</br>" + this.id.slice(x,this.id.length-1) + " " + "</a>" + "<a onClick=\"clickEvent($(this));\" id=\"remove\">x</a>" + "</li>" );
 				}
 				else {
-					$( ".ui-sortable" ).append( "<li class=\"selection sortable\" id="+ this.id + "-text ui-sortable" + "><a href=\"search.html\" class=\"iframe\" title=\"" + this.id + "\">" + this.id.slice(0,x-1) + " " + "</a>" + "<a onClick=\"clickEvent($(this));\" id=\"remove\">x</a>" + "</li>" );
+					$( ".ui-sortable" ).append( "<li class=\"selection sortable\" id="+ this.id + "-text ui-sortable" + "><a href=\"search.html\" class=\"iframe\" title=\"" + this.id.slice(0,-1) + "\">" + this.id.slice(0,x-1) + " " + "</a>" + "<a onClick=\"clickEvent($(this));\" id=\"remove\">x</a>" + "</li>" );
 				}
 			$('.iframe').fancybox({
 				width : '90%',

@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>In Page Viewer</title>
+<link href="navbar.css" rel="stylesheet">
+<style>
+#navigation ul, #navigation li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#navigation a {
+	background-color: rgb(204,204,204);
+	text-decoration: none;
+	font: 16px 'ColaborateLightRegular', Arial, sans-serif;
+	text-indent: 10px;
+	border-top: 1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:1px solid #999;
+	border-bottom:1px solid #999;
+	margin: 0px;
+	padding: 0px;
+	color: rgb(53,75,118);
+}
+#navigation a:hover {
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	background-color: #555;
+	color: white;
+}
+#navigation .stack > a {
+	background-image: url(images/arrow.png);
+	background-repeat: no-repeat;
+	background-position: 97% 8px;
+}
+#navigation .stack > a:hover {
+	background-position: 97% -78px;
+}
+#navigation ul .stack > a {
+	background-position: 97% -21px;
+}
+#navigation ul .stack > a:hover {
+	background-position: 97% -54px;
+}
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+<script src="nav1.1.min.js"></script>
+<script>
+$(document).ready(function() {
+ $("#navigation").navPlugin({
+   'itemWidth': 500,
+   'itemHeight': 30,
+   'navEffect': "slide",
+   'speed': 250
+ });
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="content">
+    <div class="main">
+      <ul id="navigation" >
+        
+        <li><a href="#">Statistics </a>
+          <ul>
+            <li><a href="#">Average Salary</a>
+              <ul>
+                <li><a href="#">All Majors</a></li>
+                <li><a href="#">Agriculture, Agriculture Operations, and Related Sciences</a></li>
+                <li><a href="#">Architecture and Related Services</a></li>
+                <li><a href="#">Biological and Biomedical Sciences</a></li>
+                <li><a href="#">Business, Management, Marketing, and Related Support Services</a></li>
+                <li><a href="#">Communication, Journalism, and Related Programs</a></li>
+                <li><a href="#">Computer and Information Sciences and Support Services</a></li>
+                <li><a href="#">Construction Trades</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Engineering</a></li>
+                <li><a href="#">Foreign Languages, Literatures, and Linguistics</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Human Services</a></li>
+                <li><a href="#">Legal Professions and Studies</a></li>
+                <li><a href="#">Liberal Arts and Sciences Studies and Humanities</a></li>
+                <li><a href="#">Mathematics and Statistics</a></li>
+                <li><a href="#">Multi/interdisciplinary Studies</a></li>
+                <li><a href="#">Natural Resources and Conservation</a></li>
+                <li><a href="#">Philosophy and Religious Studies</a></li>
+                <li><a href="#">Physical Sciences</a></li>
+                <li><a href="#">Psychology</a></li>
+                <li><a href="#">Social Sciences</a></li>
+                <li><a href="#">Sports Science</a></li>
+                <li><a href="#">Theology and Religious Vocations</a></li>
+                <li><a href="#">Visual and Performing Arts</a></li>
+              </ul>
+            </li>
+            <li><a href="#">World Billionaires </a>
+              <ul>
+                <li><a href="#">1-25</a></li>
+                <li><a href="#">26-50</a></li>
+                <li><a href="#">51-75</a></li>
+                <li><a href="#">76-100</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

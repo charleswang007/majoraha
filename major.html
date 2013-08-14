@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Major Summary</title>
+<link href="_css/site.css" rel="stylesheet">
+<style type="text/css">
+h2 {
+	background: url(image/open.png) no-repeat 0 11px;
+	padding: 10px 0 0 25px;
+	cursor: pointer;
+}
+h2.close {
+	background-image: url(image/close.png);
+}
+.answer {
+	margin-left: 25px;	
+}
+</style>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+$(document).ready(function() {
+ $('.answer').hide();
+ $('.main h2').toggle(
+		function() {
+	       $(this).next('.answer').slideDown();
+		   $(this).addClass('close');
+		},
+		function() {
+		   $(this).next('.answer').fadeOut();
+		   $(this).removeClass('close');
+	  }
+	); // end toggle
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+	<p class="logo">Major Finder</p>
+</div>
+<div class="content">
+	<div class="main">
+<h1>List of Majors and Their Descriptions </h1>
+	<a id="major1"></a>
+    	<h2>major1</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major2"></a>
+    	<h2>major2</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major3"></a>
+    	<h2>major3</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major4"></a>
+    	<h2>major4</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major5"></a>
+    	<h2>major5</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major6"></a>
+    	<h2>major6</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major7"></a>
+    	<h2>major7</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major8"></a>
+    	<h2>major8</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major9"></a>
+    	<h2>major9</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major10"></a>
+    	<h2>major10</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major11"></a>
+    	<h2>major11</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major12"></a>
+    	<h2>major12</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major13"></a>
+    	<h2>major13</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major14"></a>
+    	<h2>major14</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    <a id="major15"></a>
+    	<h2>major15</h2>
+    	<div class="answer">
+        <p>Descriptions</p>
+      </div>    
+    </a>
+    
+
+    </div>
+</div>
+</div>
+</body>
+</html>
