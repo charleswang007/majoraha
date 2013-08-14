@@ -45,7 +45,7 @@
         <div id="title-panel"> 
         	<span id="title"> MajorAha --- A College Major Search Browser and Information Provider</span>
             <span id="button-panel">
-            <a class="btn1 green iframe" title="about" href="about.html">About</a>
+            <a class="btn1 green iframe" title="about" href="carousel.html">About</a>
             <a class="btn1 blue iframe" title="team" href="team.html">Team</a>
             <a class="btn1 orange iframe" title="major list" href="major.html">Major List</a>
             <a class="btn1 red iframe" title="data visualization" href="moredata/vis.html">More Data</a>
@@ -83,7 +83,7 @@
             '<div></div><button>Show More</button>';
         
         var itemTemplate = 
-            '<a class="fade" href="http://www.nba.com" target="_blank"> <img width="100%" src="<%= obj.imageURL %>"></a>' + 
+            '<a class="fade iframe imglink" href="major.html" target="_blank"> <img width="100%" src="<%= obj.imageURL %>"></a>' + 
             '<h5 class="itemtitle"><span class="trigger" data-tooltip="#tip1" id=<%= obj.titleshort %>><%= obj.title %></span></h5>' + 
             '<ul class="tags">' + 
                 '<% if (obj.facet1) {  %><li><%= obj.facet1 %></li><% } %>' +

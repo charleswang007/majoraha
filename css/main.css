@@ -257,6 +257,9 @@ li {
 .iframe:hover{
 	background-color:#6F9;
 }
+.imglink:hover{
+	background-color:transparent;
+}
 
 .ui-dialog,.ui-dialog,.ui-widget, .ui-widget-content, .ui-corner-all, .foo, .ui-draggable, .ui-resizable {
 	background:#6CC !important;
