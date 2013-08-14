@@ -72,7 +72,7 @@
             '<div></div><button>Show More</button>';
         
         var itemTemplate = 
-            '<a href="http://www.nba.com" target="_blank"> <img width="100%" src="<%= obj.imageURL %>"></a>' + 
+            '<a class="fade" href="http://www.nba.com" target="_blank"> <img width="100%" src="<%= obj.imageURL %>"></a>' + 
             '<h5 class="itemtitle"><span class="trigger" data-tooltip="#tip1" id=<%= obj.titleshort %>><%= obj.title %></span></h5>' + 
             '<ul class="tags">' + 
                 '<% if (obj.facet1) {  %><li><%= obj.facet1 %></li><% } %>' +
@@ -82,7 +82,7 @@
             '</ul>' + 
 			'<p></p>' +
             //'<p class="desc"><%= obj.description %>' + 
-			'<div class="select" id=<%= obj.titleshort %>></div></p>'
+			'<div class="select" id=<%= obj.titleshort %>- name=<%= obj.titleshort %>_button\'></div></p>'
         var facetTemplate = 
             '<h4 class=facettitle><%= title %></h4>';
         var facetItemTemplate = 
@@ -140,12 +140,15 @@
     </div>
     
   <div id="results2">
-    	<p>Your selected majors:
+    	<p>Your selected majors <br/> (can be deleted or sorted):          
+            
     	<form name="form1" method="post" action="" onSubmit="JavaScript:print()">
 			<div class="results2-1" id="majorList">
+            <ul id="sortable" class="ui-sortable">
+            </p>
     	  <input type="submit" name="answer" id="answer" value="Export">
   	  </form>
-    	</p>
+      </ul>	
     
     </div>
   </div>

@@ -280,3 +280,17 @@ li {
     opacity: 0.3;
 	filter: Alpha(Opacity=100);
 }
+#sortable { list-style-type: disc; margin: 0; padding: 0; }
+#sortable li { margin-left: 40px; padding-left: 5px; cursor: pointer; margin-bottom: 7px; }
+#remove { border: 1px solid #DDDDDD; background: #C9C; padding: 2px; color: white; font-family:Arial, Helvetica, sans-serif; margin:0,0,0,0 }
+
+.fade {
+   opacity: 0.5;
+   transition: opacity .15s ease-in-out;
+   -moz-transition: opacity .15s ease-in-out;
+   -webkit-transition: opacity .15s ease-in-out;
+}
+
+.fade:hover {
+   opacity: 1;
+}
