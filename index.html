@@ -2,6 +2,7 @@
 <html lang="en">
   <!-- adapted from http://eikes.github.com/facetedsearch/ -->
   <head>
+    <meta charset="utf-8" />
     <title>MajorAha !!</title>
     <link type="text/css" rel="stylesheet" href="css/main.css">
     <link href="js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet">
@@ -12,7 +13,7 @@
     <script src="js/backbone.js"></script>
     <script src="js/facetedsearch.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/fancybox/jquery.fancybox-1.3.4.min.js"></script>
+    <script src="js/fancybox/jquery.fancybox-1.3.4.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script>
 		$(document).ready(function() {
@@ -45,7 +46,7 @@
         <div id="title-panel"> 
         	<span id="title"> <span id="title1">MajorAha</span> --- A College Major Search Browser and Information Provider&nbsp;&nbsp;&nbsp;</span>
             <span id="logo-panel">
-            	<img src="image/logo-new.jpg" height="60">
+            	<img src="image/logo-new.jpg" height="60" alt="majaha_logo">
             </span>
             <span id="button-panel">
                 <a class="btn1 green iframe" title="about" href="carousel.html">About</a>
@@ -154,17 +155,15 @@
     </div>
     
   <div id="results2">
-    	<p>Your selected majors: <br/> (can be deleted or sorted)<br/> (clicked to show LinkedIn Network):          
+    	<p>Your selected majors: <br/> (can be deleted or sorted)<br/> (clicked to show LinkedIn Network):   </p>       
             
-    	<form name="form1" method="post" action="" onSubmit="JavaScript:print()">
-			<div class="results2-1" id="majorList">
-            <ul id="sortable" class="ui-sortable">
-            </p>
-    	  <input type="submit" name="answer" id="answer" value="Export">
-  	  </form>
-      </ul>	
-    
-    </div>
+    	<form name="form1" method="post" onSubmit="JavaScript:print()">
+  			<div class="results2-1" id="majorList">
+          <input type="submit" name="answer" id="answer" value="Export">
+          <ul id="sortable" class="ui-sortable">
+          </ul>	
+        </div>
+      </form>
   </div>
   </body>
 </html>
