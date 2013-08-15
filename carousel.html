@@ -1,10 +1,92 @@
-<!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>About</title>
-</head>
+<title>Carousel Example</title>
+ <!-- 1. Download and insert the script from Cloud Carousel Website -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+ <script type="text/javaScript" src="js/cloud-carousel.1.0.5.min.js"></script>
+ <script type="text/javascript">
+<!--
 
+$(document).ready(function(){
+
+		// This initialises carousels on the container elements specified, in this case, carousel1.
+		$("#carousel1").CloudCarousel(		
+			{			
+				// Best is half of the width you set in DIV style of carouselID
+				xPos: 590,
+				// Determines the central height of the pivot point of the carousel itself.
+				yPos: 80,
+				buttonLeft: $("#butLeft"),
+				buttonRight: $("#butRight"),
+				reflHeight: 56,
+				reflGap:2,
+			}
+		);
+	});
+	$(document).keydown(function(e) {
+			if (e.keyCode === 37) {
+				leftClick();
+			}
+            if (e.keyCode === 39) {
+				rightClick();
+			}
+          });
+		  
+	function leftClick()
+	{
+		document.getElementById('L').click();
+		console.log(document.getElementById('L'));
+	}
+	function rightClick()
+	{
+		document.getElementById('R').click();  
+	}
+	
+
+</script>
+ <style type="text/css">
+<!--
+.style1 {font-size: 12px}
+body {
+	background-color: #000000;
+}
+.style2 {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+-->
+ </style>
+ <meta http-equiv="Content-Type" content="text/html; charset=big5"></head>
+ 
 <body>
-This is About
+ <span class="style1">
+ <header><span class="style2">Get a Glimpse of Available Major Categories</span></header>
+ </span>
+ <div id="carousel1" style="width:100%; height:95%; background: url(image/bg1.jpg);overflow:visible">
+ <img class="cloudcarousel" src="image/agriculture.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/architecture.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/biological.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/business.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/communication.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/computer.jpg" width="150" height ="150"/></a>
+ <img class="cloudcarousel" src="image/construction.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/education.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/engineering.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/foreign.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/history.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/human.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/law.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/liberal.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/math.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/multi.jpg" width="150" height ="150"/></a>
+ <img class="cloudcarousel" src="image/natural.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/philosophy.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/physics.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/psychology.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/religious.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/social.jpg" width="150" height ="150"/></a> 
+ <img class="cloudcarousel" src="image/sports.jpg" width="150" height ="150"/></a> 
+
+ 	<div id="butRight" style="position:relative;top:350px;float:right" ><input type="button" id="R" value="Right" name="right" /></div> 
+	<div id="butLeft" style="position:relative;top:350px;float:right" ><input type="button" id="L" value="Left" name="left" /></div>
+  	
 </body>
-</html>
