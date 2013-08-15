@@ -18,6 +18,11 @@ function piechart()
                 startAngle: -90,
                 showDataLabels: true
             }
-        }
+        },
+        legend: { show:true, location: 'e' },
+        highlighter: {
+        show: true,
+        sizeAdjust: 7.5
+      }
     });
 }

@@ -7,6 +7,7 @@ var arr;
 
 $(document).ready(function()
 {
+  navpre();
   if(!window.localStorage){alert('This browser does NOT support localStorage...Please update your browser');}
   // alert(localStorage.a);
   if(localStorage.majorsele==null){localStorage.majorsele = 0;}
@@ -539,4 +540,14 @@ function record(n)
   localStorage.majorsele=n;
   // alert(localStorage.majorsele);
   window.location.reload(true);
+}
+
+function navpre()
+{
+  $("#navigation").navPlugin({
+         'itemWidth': 400,
+         'itemHeight': 30,
+         'navEffect': "slide",
+         'speed': 250
+       });
 }
