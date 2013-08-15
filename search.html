@@ -45,7 +45,7 @@ function PeopleSearch(keywords) {
 	 console.log("keywords:");
 	 console.log(keywords);
      IN.API.PeopleSearch()
-         .fields("firstName", "lastName", "distance", "siteStandardProfileRequest", "industry", "educations", "location:(name)", "public-profile-url", "relation-to-viewer:(distance)", "id", "headline")
+         .fields("firstName", "lastName", "distance", "siteStandardProfileRequest", "industry", "educations", "location:(name)", "public-profile-url", "relation-to-viewer:(distance)", "id", "headline", "pictureUrl")
          .params({"keywords": keywords, "count": 10, "sort": "distance"})
          .result(displayPeopleSearch)
          .error(function error(e) { /* do nothing */ }
@@ -73,6 +73,8 @@ function displayPeopleSearch(peopleSearch) {
 		 var industryText = ", Industry: " + "<span class=\"field\">" + members[member].industry + "</span>";
 		 var headline = ", Current Position: " + "<span class=\"field\">" + members[member].headline + "</span>";
 		 var location = ", Location: " + "<span class=\"field\">" + members[member].location.name + "</span>";
+		 var pictureUrl = members[member].pictureUrl;
+		 console.log("picture: " + pictureUrl);
 		 /*
          switch (distance) {
          case 0:  // The viewer
@@ -94,9 +96,21 @@ function displayPeopleSearch(peopleSearch) {
  
          div.innerHTML += "<li><a class=\"name\" target=\"blank\" href=\"" + url + "\">" + nameText + 
          "</a> is <span class=\"description\">" + distanceText + industryText + headline + location + "</span></li>"
+		 
      }
  
-     div.innerHTML += "</ul>";
+     div.innerHTML += "</ul><p></p>";
+	 for (var member in members) {
+		 if (! members[member].pictureUrl){
+			 console.log("fuck!!!:");
+			 div.innerHTML += "<img width=120 src=\"image/person.jpg\">";
+			 console.log(">> insert!!!:");
+		 }
+		 else {
+		 	div.innerHTML += "<img width=120 src=" + members[member].pictureUrl + ">";
+		 }
+	 }
+		 
 }
 function displayProfiles(profiles) {
 	console.log(profiles.values);
