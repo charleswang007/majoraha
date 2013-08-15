@@ -2,7 +2,7 @@
 <html lang="en">
   <!-- adapted from http://eikes.github.com/facetedsearch/ -->
   <head>
-    <title>Faceted Major Search</title>
+    <title>MajorAha !!</title>
     <link type="text/css" rel="stylesheet" href="css/main.css">
     <link href="js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -43,13 +43,16 @@
     <!-- html boilerplate -->
     <div id="container">
         <div id="title-panel"> 
-        	<span id="title"> MajorAha --- A College Major Search Browser and Information Provider</span>
+        	<span id="title"> <span id="title1">MajorAha</span> --- A College Major Search Browser and Information Provider&nbsp;&nbsp;&nbsp;</span>
+            <span id="logo-panel">
+            	<img src="image/logo-new.jpg" height="60">
+            </span>
             <span id="button-panel">
-            <a class="btn1 green iframe" title="about" href="carousel.html">About</a>
-            <a class="btn1 blue iframe" title="team" href="team.html">Team</a>
-            <a class="btn1 orange iframe" title="major list" href="major.html">Major List</a>
-            <a class="btn1 red iframe" title="data visualization" href="moredata/vis.html">More Data</a>
-            <a class="btn1 purple iframe" title="reference" href="reference.html">Reference</a>
+                <a class="btn1 green iframe" title="about" href="carousel.html">About</a>
+                <a class="btn1 blue iframe" title="team" href="team.html">Team</a>
+                <a class="btn1 orange iframe" title="major list" href="major.html">Major List</a>
+                <a class="btn1 red iframe" title="data visualization" href="moredata/vis.html">More Data</a>
+                <a class="btn1 purple iframe" title="reference" href="reference.html">Reference</a>
   			</span>
         </div>
         <p> </p>
@@ -83,7 +86,7 @@
             '<div></div><button>Show More</button>';
         
         var itemTemplate = 
-            '<a class="fade iframe imglink" href="major.html" target="_blank"> <img width="100%" src="<%= obj.imageURL %>"></a>' + 
+            '<a class="fade iframe imglink" href="major.html#<%= obj.titleshort %>" target="_blank"> <img width="100%" src="<%= obj.imageURL %>"></a>' + 
             '<h5 class="itemtitle"><span class="trigger" data-tooltip="#tip1" id=<%= obj.titleshort %>><%= obj.title %></span></h5>' + 
             '<ul class="tags">' + 
                 '<% if (obj.facet1) {  %><li><%= obj.facet1 %></li><% } %>' +
@@ -120,7 +123,7 @@
           itemsTemplate     : itemsTemplate,
           facetTemplate     : facetTemplate,
           facetItemTemplate : facetItemTemplate,
-          paginationCount   : 100,
+          paginationCount   : 40,
           orderByOptions    : {'firstname': 'First name', 'lastname': 'Last name', 'category': 'Category', 'RANDOM': 'Random'}
         }
         
@@ -151,7 +154,7 @@
     </div>
     
   <div id="results2">
-    	<p>Your selected majors <br/> (can be deleted or sorted):          
+    	<p>Your selected majors: <br/> (can be deleted or sorted)<br/> (clicked to show LinkedIn Network):          
             
     	<form name="form1" method="post" action="" onSubmit="JavaScript:print()">
 			<div class="results2-1" id="majorList">

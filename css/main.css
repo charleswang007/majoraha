@@ -2,6 +2,28 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-face {
+    font-family: 'ColaborateThinRegular';
+    src: url('ColabThi-webfont.eot');
+    src: url('ColabThi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ColabThi-webfont.woff') format('woff'),
+         url('ColabThi-webfont.ttf') format('truetype'),
+         url('ColabThi-webfont.svg#ColaborateThinRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ColaborateMediumRegular';
+    src: url('ColabMed-webfont.eot');
+    src: url('ColabMed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ColabMed-webfont.woff') format('woff'),
+         url('ColabMed-webfont.ttf') format('truetype'),
+         url('ColabMed-webfont.svg#ColaborateMediumRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -98,6 +120,16 @@ li {
 
 #title {
 	margin-bottom: 20px;
+	font-size:large;
+	color:#C60;
+	font-family: 'ColaborateThinRegular', Arial, sans-serif;
+}
+#title1 {
+	margin-bottom: 20px;
+	font-size:large;
+	color:#C03;
+	font-family: 'Inconsolata', Courier, monospaced;
+	font-weight:bold;
 	font-size:large;
 }
 
@@ -355,5 +387,5 @@ li {
 	right:5%;
 	
 }
-#title-panel {
+#logo-panel {
 }
