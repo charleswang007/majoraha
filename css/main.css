@@ -123,11 +123,11 @@ li {
 	font-size:large;
 	color:#C60;
 	font-family: 'ColaborateThinRegular', Arial, sans-serif;
+	font-weight:bold;
 }
 #title1 {
 	margin-bottom: 20px;
 	font-size:large;
-	color:#C03;
 	font-family: 'Inconsolata', Courier, monospaced;
 	font-weight:bold;
 	font-size: xx-large;
@@ -388,4 +388,8 @@ li {
 	
 }
 #logo-panel {
+}
+#title-link{
+	text-decoration:none;
+	color:#C03;
 }
